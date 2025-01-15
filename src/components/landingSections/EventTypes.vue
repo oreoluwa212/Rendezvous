@@ -14,6 +14,10 @@
 </template>
 
 <script>
+import concertStage from "@/assets/images/concert-stage.jpg";
+import event1 from "@/assets/images/event_1.jpg";
+import event2 from "@/assets/images/event_2.jpg";
+
 export default {
     name: 'EventTypes',
     data() {
@@ -21,17 +25,17 @@ export default {
             eventTypes: [
                 {
                     id: 1,
-                    image: '/src/assets/images/concert-stage.jpg',
+                    image: concertStage,
                     title: 'Online Events',
                 },
                 {
                     id: 2,
-                    image: '/src/assets/images/event_1.jpg',
+                    image: event1,
                     title: 'Physical Events',
                 },
                 {
                     id: 3,
-                    image: '/src/assets/images/event_2.jpg',
+                    image: event2,
                     title: 'Hybrid Events',
                 },
             ],
