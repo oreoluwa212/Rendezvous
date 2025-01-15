@@ -11,7 +11,10 @@
             <div v-else-if="error" class="col-span-3 text-center">
                 <p class="text-red-500">Failed to load events. Please try again later.</p>
             </div>
-            <div v-else v-for="event in events" :key="event.id" class="shadow-md rounded-lg border overflow-hidden">
+            <!-- Make the card clickable -->
+            <router-link v-else v-for="event in events" :key="event.id"
+                :to="{ name: 'product-details', params: { id: event.id } }"
+                class="shadow-md rounded-lg border overflow-hidden block hover:shadow-lg transition-shadow">
                 <div class="w-full flex justify-center items-center py-5">
                     <img :src="event.image" alt="Event" class="w-48 h-48 object-cover" />
                 </div>
@@ -19,15 +22,12 @@
                     <h3 class="text-lg font-bold">{{ event.title }}</h3>
                     <p class="text-sm text-gray-500">{{ event.date }}</p>
                     <p class="text-sm mt-2">{{ event.description }}</p>
-                    <router-link :to="{ name: 'product-details', params: { id: event.id } }"
-                        class="text-purple-700 hover:underline mt-2 block">
-                        View details
-                    </router-link>
                 </div>
-            </div>
+            </router-link>
         </div>
     </div>
 </template>
+
 
 <script>
 import ProductService from "@/services/ProductService";
