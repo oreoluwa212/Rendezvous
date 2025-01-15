@@ -4,7 +4,7 @@
             <h2 class="text-2xl font-bold text-purple-700">Trending events</h2>
             <a href="#" class="text-purple-700 hover:text-purple-500">View all trending events &rarr;</a>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-6">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mt-6">
             <div v-if="loading" class="col-span-3 text-center">
                 <p class="text-gray-500">Loading products...</p>
             </div>
