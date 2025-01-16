@@ -11,7 +11,6 @@
             <div v-else-if="error" class="col-span-3 text-center">
                 <p class="text-red-500">Failed to load events. Please try again later.</p>
             </div>
-            <!-- Make the card clickable -->
             <router-link v-else v-for="event in events" :key="event.id"
                 :to="{ name: 'product-details', params: { id: event.id } }"
                 class="shadow-md rounded-lg border overflow-hidden block hover:shadow-lg transition-shadow">
@@ -22,6 +21,10 @@
                     <h3 class="text-lg font-bold">{{ event.title }}</h3>
                     <p class="text-sm text-gray-500">{{ event.date }}</p>
                     <p class="text-sm mt-2">{{ event.description }}</p>
+                    <router-link :to="{ name: 'product-details', params: { id: event.id } }"
+                        class="text-purple hover:italic mt-3  gap-2 flex items-center">
+                        View details <span class="material-icons text-base">arrow_forward</span>
+                    </router-link>
                 </div>
             </router-link>
         </div>
